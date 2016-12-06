@@ -1,0 +1,60 @@
+Oper nr: 1
+Line nr: 170
+Attachment: Michaels_2008
+Oper nr: 2
+Line nr: 173
+Attachment: Giurgiutiu2008
+Oper nr: 3
+Line nr: 175
+Attachment: Karaman2009
+Oper nr: 4
+Line nr: 176
+Attachment: Drinkwater2006525
+Oper nr: 5
+Line nr: 178
+Attachment: Giurgiutiu2008
+Oper nr: 6
+Line nr: 180
+Attachment: Malinowski2009
+Oper nr: 7
+Line nr: 181
+Attachment: Wilcox_2003
+Oper nr: 8
+Line nr: 187
+Attachment: Davies2009
+Oper nr: 9
+Line nr: 190
+Attachment: Moreira2013
+Oper nr: 10
+Line nr: 192
+Attachment: Jensen2006
+Oper nr: 11
+Line nr: 195
+Attachment: davies_142
+Oper nr: 13
+Line nr: 209
+Attachment: Moreau5278443
+Oper nr: 15
+Line nr: 232
+Attachment: Johnson1993
+Oper nr: 18
+Line nr: 287
+Attachment: Giurgiutiu2008
+Oper nr: 19
+Line nr: 349
+Attachment: Giurgiutiu2008
+Oper nr: 20
+Line nr: 394
+Attachment: Giurgiutiu2008
+Oper nr: 21
+Line nr: 425
+Attachment: Moreau5278443
+Oper nr: 22
+Line nr: 448
+Attachment: Moreau5278443
+Oper nr: 26
+Line nr: 525
+Attachment: Hoctor1990
+Oper nr: 28
+Line nr: 624
+Attachment: Moreau5278443

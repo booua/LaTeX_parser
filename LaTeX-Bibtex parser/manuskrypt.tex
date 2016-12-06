@@ -1,0 +1,878 @@
+ %% This is file `elsarticle-template-1a-num.tex',
+%%
+%% Copyright 2009 Elsevier Ltd
+%%
+%% This file is part of the 'Elsarticle Bundle'.
+%% ---------------------------------------------
+%%
+%% It may be distributed under the conditions of the LaTeX Project Public
+%% License, either version 1.2 of this license or (at your option) any
+%% later version. The latest version of this license is in¦
+%%   http://www.latex-project.org/lppl.txt
+%% and version 1.2 or later is part of all distributions of LaTeX
+%% version 1999/12/01 or later.
+%%
+%% The list of all files belonging to the 'Elsarticle Bundle' is
+%% given in the file `manifest.txt'.
+%%
+%% Template article for Elsevier's document class `elsarticle'
+%% with numbered style bibliographic references
+%%
+%% $Id: elsarticle-template-1a-num.tex 151 2009-10-08 05:18:25Z rishi $
+%% $URL: http://lenova.river-valley.com/svn/elsbst/trunk/elsarticle-template-1a-num.tex $
+%%
+%%\documentclass[preprint,12pt]{elsarticle}
+
+%% Use the option review to obtain double line spacing
+%% \documentclass[preprint,review,12pt]{elsarticle}
+
+%% Use the options 1p,twocolumn; 3p; 3p,twocolumn; 5p; or 5p,twocolumn
+%% for a journal layout:
+\documentclass[final,1p,times]{elsarticle}%
+%% \documentclass[final,1p,times,twocolumn]{elsarticle}
+%% \documentclass[final,3p,times]{elsarticle}
+%% \documentclass[final,3p,times,twocolumn]{elsarticle}
+%% \documentclass[final,5p,times]{elsarticle}
+%% \documentclass[final,5p,times,twocolumn]{elsarticle}
+
+%% if you use PostScript figures in your article
+%% use the graphics package for simple commands
+ \usepackage{graphics}
+%% or use the graphicx package for more complicated commands
+% \usepackage{graphicx}
+%% or use the epsfig package if you prefer to use the old commands
+%% \usepackage{epsfig}
+
+\usepackage[]{subfigure}
+\usepackage[breaklinks = true]{hyperref}
+
+%% The amssymb package provides various useful mathematical symbols
+\usepackage{amssymb}
+%% The amsthm package provides extended theorem environments
+ \usepackage{amsthm}
+ \usepackage{epstopdf}
+
+%% The lineno packages adds line numbers. Start line numbering with
+%% \begin{linenumbers}, end it with \end{linenumbers}. Or switch it on
+%% for the whole article with \linenumbers after \end{frontmatter}.
+ \usepackage{lineno}
+
+%% natbib.sty is loaded by default. However, natbib options can be
+%% provided with \biboptions{...} command. Following options are
+%% valid:
+
+%%  round - round parentheses are used (default)
+%%  square - square brackets are used  [option]
+%%  curly - curly braces are used    {option}
+%%  angle - angle brackets are used   <option>
+%%  semicolon - multiple citations separated by semi-colon
+%%  colon - same as semicolon, an earlier confusion
+%%  comma - separated by comma
+%%  numbers- selects numerical citations
+%%  super - numerical citations as superscripts
+%%  sort  - sorts multiple citations according to order in ref. list
+%%  sort&compress  - like sort, but also compresses numerical citations
+%%  compress - compresses without sorting
+%%
+ \biboptions{comma,square}
+
+% \biboptions{}
+
+
+\journal{Journal Name}
+
+\begin{document}
+
+\begin{frontmatter}
+
+%% Title, authors and addresses
+
+%% use the tnoteref command within \title for footnotes;
+%% use the tnotetext command for the associated footnote;
+%% use the fnref command within \author or \address for footnotes;
+%% use the fntext command for the associated footnote;
+%% use the corref command within \author for corresponding author footnotes;
+%% use the cortext command for the associated footnote;
+%% use the ead command for the email address,
+%% and the form \ead[url] for the home page:
+%%
+%% \title{Title\tnoteref{label1}}
+%% \tnotetext[label1]{}
+%% \author{Name\corref{cor1}\fnref{label2}}
+%% \ead{email address}
+%% \ead[url]{home page}
+%% \fntext[label2]{}
+%% \cortext[cor1]{}
+%% \address{Address\fnref{label3}}
+%% \fntext[label3]{}
+
+\title{Coarray concept for multistatic beamforming of Lamb waves with the use of two dimmensional arrays.}
+
+%% use optional labels to link authors explicitly to addresses:
+%% \author[label1,label2]{<author name>}
+%% \address[label1]{<address>}
+%% \address[label2]{<address>}
+
+\author{Lukasz Ambrozinski\corref{cor1}}
+\ead{ambrozin@agh.edu.pl}
+\address{AGH University of Science and Technology, al. Mickiewicza 30, 30-059 Cracow, Poland }
+
+
+\author{Tadeusz Stepinski}
+\ead{tstepin@agh.edu.pl}
+\address{AGH University of Science and Technology, al. Mickiewicza 30, 30-059 Cracow, Poland }
+
+
+\cortext[cor1]{corresponding author}
+
+
+\begin{abstract}
+%% Text of abstract
+
+  
+\end{abstract}
+
+\begin{keyword}
+%% keywords here, in the form: keyword \sep keyword
+Lamb waves\sep coarray \sep beamforming \sep phased array \sep effective aperture
+%% MSC codes here, in the form: \MSC code \sep code
+%% or \MSC[2008] code \sep code (2000 is the default)
+
+\end{keyword}
+
+\end{frontmatter}
+\tableofcontents
+%\listoffigures
+%%
+%% Start line numbering here if you want
+%%
+% \linenumbers
+
+%% main text
+%\section{}
+%\label{}
+
+%% The Appendices part is started with the command \appendix;
+%% appendix sections are then done as normal sections
+%% \appendix
+
+%% \section{}
+%% \label{}
+
+\section{Introduction}
+
+
+
+A critical factor for SHM of plate-like
+structures is the design of transducers and their distribution over
+the investigated plate. A well known approach in this field is the
+use of transducers distributed over the structure, as presented in fig.~\ref{fig:array_networks}b
+\citep{Michaels_2008}. The sensitivity of a SHM system can be
+enhanced by means of active ultrasonic arrays (fig.~\ref{fig:array_networks}a)  due to
+their superior signal to noise-ratio and beam-steering capability
+\citep{Giurgiutiu2008}.
+
+The concept of beam-steering of ultrasonic waves with the use of arrays is well-established both in medical \citep{Karaman2009} and NDT
+\citep{Drinkwater2006525} imaging. It appeared, however, that implementing the method for SHM of plate-like structures requires arrays
+with 2D topologies to avoid equivocal damage localization
+\citep{Giurgiutiu2008}. Therefore, a number of reports has been
+published concerning various shapes of arrays, such as: star
+\cite{Malinowski2009}, square~\citep{Engholm2010}, circular
+\citep{Wilcox_2003} and spiral \citep{Yoo2010} shaped arrays.
+
+In SHM applications a phased array of transducers can be considered in the transmission mode as a directional source that allows to enhance the waves in a desired azimuth and to suppress those emitted in the other directions, while in the reception mode, it acts as a spatial filter enabling enhancement of the waves arriving from a desired azimuth. Array steering operation is performed using an algorithm referred to as \emph{beamformer}.
+
+
+An alternative to PA, is \emph{synthetic focusing} (SF) 
+approach, which assumes that the data processing is performed post-acquisition \cite{Davies2009}. Using the SF technique means that the resulting aperture is obtained synthetically, i.e., the image is formed by successive excitation of selected transmitting elements and reception of the scattered waves by the selected receiving array elements. The \emph{synthetic aperture} (SA) can be considered as a set of virtual transmitting/receiving elements that not neccesairly coincidence the physical array elements. 
+
+The initial SA approaches were designed to increase the system resolution enlarging the size of the SA using a moving transducer. For example, an aircraft was used to carry an antenna in synthetic aperture radar (SAR) applications \cite{Moreira2013}, or a single ultrasonic probe operating in pulse/echo mode, moved using a mechanical scanner, was used in the SAFT applied for NDT using bulk \cite{Ylitalo1994} and Lamb waves \cite{Sicard2004,Dobie2013}. 
+
+The latter implementations of the SA concept were applied for stationary arrays consisting of a fixed number of elements that were switched between the transmission and reception cycles for aperture synthesis \cite{Jensen2006}. For an array with $N$ elements a full matrix of $N^{2}$ transmit-receive data can be acquired if all the elements are fired in $N$ transmission cycles. Processing of the full matrix is refeered to as total focussing method (TFM) \cite{Holmes2005}. 
+
+
+There are, however, many other ways of aperture synthesis that depend on the array geometry and topology of the transmitting/receiving sub-arrays \cite{davies_142}. Most of these ways are designed to reduce number of transmissions without loosing of resolution and with acceptable signal to noise ratio. Generally, this can be achieved by using multi-elements transmitting apertures, that emulate radiation pattern of a single element, i.e., to obtain a spherical wave with limited angular range  \cite{Chiao1997}.  
+
+The quality of an image created with the use of an array of a
+defined shape depends also, among other factors, on the array's
+aperture and imaging technique. A moving transducer can be used in
+mechanized NDT applications to increase  the aperture of an array
+with the use of synthetic aperture focusing technique
+(SAFT)~\citep{doctor1986163}. Since this solution would be
+infeasible in most SHM applications, this chapter is concerned with
+the static arrays that can be permanently attached to the monitored
+structure and used in SHM applications. These arrays can take
+advantage of multiple emitting transducers capable of illuminating a
+defect from a set of diverse localizations, which results in an
+extension of array's effective aperture~\citep{Moreau5278443}.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Theory}
+\label{sec:PA_imaging}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+In order to provide solid theoretical grounds for the presented approaches, this section outlines definition of aperture and tools that can be used for characterization of aperture's performance. Next, an  overview of the concepts of synthetic aperture and effective aperture is outlined below. The theoretical background is then used to present imaging schemes in the context of the synthetic aperture concept.
+
+
+\textit{In this section we will present the most important factors that influence the imaging capabilities of an array, namely spatial sampling over a defined aperture, imaging scheme, coarray and time-frequency representation. }
+
+
+\subsection{Apertures and arrays}
+\label{sec:apertAndArraysTheory}
+
+Phased arrays are built up of a set of transducers distributed spatially according to a~defined topology. Generally, any shape can be realized and the transducers can be used both in the transmission and reception modes.
+
+To illustrate the imaging process, let us assume a planar array of transducers placed, as presented in fig.~\ref{fig:planar_array}, in the $xy$ plane. In the polar coordinate system the position of an imaging point $P_1$ is defined by its distance from the origin and the angles $\phi$ and $\theta$,  refereed to as \emph{azimuth} and \emph{polar angle}, respectively  p{Trees2002}. Fig.~\ref{fig:planar_array} illustrates a general case of 3D imaging usually applied in medical or NDT applications. In SHM, however, imaging plane coincidences the array's plane, hence, only the points with polar angle $\theta=90^\circ$, e.g., $P_2$, are in the region of interest (ROI).
+
+
+The array of sensors is a transducer that samples the wavefield over a finite region, called \textit{aperture}. To describe this area, aperture function $w(\vec{s})$ that carries information about the aperture can be used \cite{Johnson1993}. First, the geometrical properties, i.e. range and shape are embodied in the aperture function. Furthermore, the aperture function can be considered as a spatial window through which we observe the wavefield. Generally, the shape of the window can be adjusted to obtain the desired performance of the used signal processing technique and the function can take any real value form the range from 0~to~1\cite{Johnson1993}.
+In the case of an array consisting of $M$ discrete elements, as this presented in fig.~\ref{fig:planar_array}, the aperture function can take non-zero values only at the points corresponding to the coordinates of sensing elements $\vec{s}_m =[x_m,y_m]$, $m\in\{0,1,\dots,M-1\}$.
+
+
+
+\begin{figure}[h]
+ \centering
+	\includegraphics[width=0.5\textwidth]{Figures/3D_vs_2D_imaging.png} \caption{Planar array in spherical coordinate system. }
+ \label{fig:planar_array}
+\end{figure}
+
+
+Calculating the spatial Fourier transform of the aperture function leads to \textit{array pattern} $A(\vec{k})$, which can be interpreted as the output of an unsteered array for incoming plane waves of unit amplitude over a range of angles \cite{Trees2002}.
+In the case of a planar array the array pattern can be expressed using the following formula
+%%
+\begin{equation}
+	A(\vec{k}) =\frac{1}{M}\sum^{M-1}_{m=0}
+	w(\vec{s}_m) e^{j\vec{s}_m \vec{k}}=
+	\frac{1}{M}\sum^{M-1}_{m=0} w(\vec{s}_m) e^{j(k_x x_m+k_y y_m)},
+\end{equation}
+%
+where $M$ is the number of elements in the array, $\vec{s}_m=[x_m,y_m]$ is the position of the $m$th element, and $\vec{k}=[k_x, k_y]^T$ is the wavenumber vector in the Cartesian coordinate system.
+
+
+
+The so called \textit{steered response} of an array, is the output of a beamformer when steered to a range of wavenumbers for a fixed wavefield. Array steering can be explained as a convolution of the array pattern with the wavefield \cite{Johnson1993}. For a brief illustration of this problem, let us assume that an array captures a wavefield, defined in the Cartesian coordinates using the wavenumber vector
+$\vec{k}_0$. Such a wavefield can be expressed in the wavenumber domain as a Dirac function $\delta(\vec{k}-\vec{k}_0)$, therefore, the steered response can be expressed as
+%
+\begin{equation}
+\label{eq:ster_response}
+	A(\vec{k}) \ast \delta (\vec{k}-\vec{k}_0) = A(\vec{k}-\vec{k}_0) = \frac{1}{M}\sum^{M-1}_{m=0} w(\vec{s}_m) e^{j\vec{s}_m (\vec{k}-\vec{k}_0)}.
+\end{equation}
+%
+%where $M$ is the number of elements in the array, $\vec{s}_m=[x_m,y_m]$ is the position of the $m$th element, and $\vec{k}=[k_x, k_y]^T$ is the wavenumber vector in the Cartesian coordinate system.
+
+The array pattern and its steered response evaluated for a set of wavenumbers provide a large amount of information. In some cases, however, it is more convenient to use the \emph{beam pattern} (BP) plot, which illustrates power output from the array as a function of radiation angle for a given wavenumber. To find the BP we assume a fixed field that is scanned systematically varying the beamformer's delays for the subsequent assumed impinging directions of arrival and measuring the responses.
+
+The BP can be evaluated by expressing eq.~(\ref{eq:ster_response}) in a function of azimuth.
+The wavenumber vector of a wavefield impinging at azimuth $\phi_0$ in polar coordinates will be $\vec{k}_0 = [|\vec{k}_0| cos(\phi_0), |\vec{k}_0| sin(\phi_0)]^T$.
+Let us assume that the direction of arrival  of the impinging wave with a given wavenumber $|\vec{k}_0|$ is sought. It can be found by calculating the steered response for the wavenumbers $\vec{k} = [|\vec{k}_0| cos\phi, |\vec{k}_0| sin\phi]^T $, where in the 2D case $0\leq\phi\leq360^\circ$. The beamformer output, evaluated for a number of presumed azimuths takes the form
+% 
+\begin{equation}
+BP(\phi,M) = \frac{1}{M}\sum^{M-1}_{m=0} w_m e^{j |\vec{k}_0| [
+x_m (cos\phi - cos\phi_0) + y_m (sin\phi - sin\phi_0)
+]}.
+\label{eq:BP_general_eq}
+\end{equation}
+%
+This is a general BP definition that can be rewritten into a particular form for a given topology of an array, for instance, for the case of a uniform linear array (ULA), shown in fig. \ref{fig:Linear ULA}a, with the coordinate origin in the middle and consitiong of $M$ elements spaced at $d$. If the location vector of the
+$m$th point transducer is $\vec{s}_{m}=[(m-\frac{M-1}{2})d,0]$ the BP of this array in the far-field will be 
+\begin{equation}
+\label{eq:BP_lin_array}
+BP(\phi,\frac{d}{\lambda_0},M)=\frac{1}{M}\sum\limits_{m=0}^{M-1}w_m e^{j2\pi\frac{d}{\lambda_0}[(m-\frac{M-1}{2})(cos\phi-cos\phi_0]},
+\end{equation}
+%
+where $\lambda_0$ denotes wavelength of the propagating mode \citep{Giurgiutiu2008}. Substituting $2\pi/\lambda_0$ for $|\vec{k}_0|$ leads to an important observation that the performance of an array can be expressed in terms of $d/\lambda_0$ where the ratio of sensors spacing and the wavelength is an important array parameter. Nyquist sampling theorem applied in the spatial domain  sets the limit for the transducers spacing, $d\leq\lambda_0/2$, to avoid aliasing effect. 
+
+
+\subsection{Imaging using synthetic aperture}
+\label{sec:SA_imaging_theor}
+%
+
+Application of array technique to the SHM of plate-like structures
+involves a set of transducers that are permanently attached to or
+embedded into the structure to permit inspection of a
+large area from a fixed location. In an active
+pulse-echo setup the transmitting elements of the array generate
+elastic waves in the plate that are scattered from the
+discontinuities present in the structure and the scattered waves are
+subsequently sensed by the array's receiving elements.
+
+If an array is used in the \emph{phased array} (PA) mode, the transmitting and receiving sub-arrays normally consist of the same elements. The focal point is selected before the acquisition and in the transmission, the elements are excited by time-shifted pulses to obtain a steered wavefront. The scattered waves are captured in the reception mode and amplified by the introduction of respective time delays which brings the received pulses in phase. Beamformers implementing this technique, referred to as delay-and-sum (DAS), are commonly used in ultrasound applications. Using steered and possibly focused beam improves angular (azimuth) resolution in ultrasonic image but it requires scanning of the whole ROI. This means that the send-receive cycle has to be repeated for a number of azimuths and ranges within the ROI, which results in a low acquisition speed.
+
+%\subsubsection{Introduction to synthetic aperture imaging}
+%
+
+%If elements of a sparse transmitting aperture are distributed across the full aperture of the array, there will be no loss in the field of view
+%and only a minor loss in lateral resolution. 
+
+
+%Below, 
+%principles that can be applied to evaluate different combinations
+%of 2D transmitting-receiving apertures used in SA imaging will presented.
+
+
+
+%\emph{synthetic aperture (SA)
+%\nomenclature{SA}{synthetic aperture} 
+%approach that has been developed for radar (SAR - synthetic aperture radar) and more recently applied in medical ultrasound. Generally, SA beamforming uses different transmitting and receiving sub-arrays for imaging.  The final image is formed as a superposition of beamformed energy from all the transmitted cycles. A SA image is generated in result of post-processing of all received data which requires rather intensive computations. A SA image is essentially equivalent to an image produced by conventional PA using a number of transmit-receive focused beam cycles equal to the number of pixels in the ROI.}
+\begin{figure}
+    \centering
+        \subfigure[]{\includegraphics[width=0.3\textwidth]{figures/polar_cordinates_system.eps}}
+        \subfigure[]{\includegraphics[width=0.45\textwidth]{figures/principles_of_synth_apert.eps}}
+\caption{Beamforming using single receiver-transducer pair (a),
+Principle of synthetic aperture imaging (b).} \label{fig:principles}
+\end{figure}
+
+%Consider a transmitter-receiver pair located at a homogeneous 2D
+%medium (e.g. a~plate-like structure) in the coordinate system shown
+%in fig.~\ref{fig:principles}a. The point transmitter $T$ located at
+%$\vec{s}_T$ emits elastic waves that are scattered by the point
+%reflector $P$ at $\vec{r}$, and received by the point receiver $R$
+%at $\vec{r}_R$. The wave front of the wave with frequency $\omega$
+%at the point $P$ located at the distance $|\vec{r}-\vec{s}_T|$ from
+%the transmitter $T$ can be expressed as 
+%%
+%\begin{equation}
+%    \label{eq:wave_front}
+%    f(\vec{r},\vec{s}_T,t)=\frac{A}{\sqrt{|\vec{r}-\vec{s}_T|}}e^{j[\omega{t}-\vec{k}\cdot(\vec{r}-\vec{s}_t)]},
+%\end{equation}
+%%
+%where $A$ is a constant, $\vec{\eta}=\frac{\vec{r}}{|\vec{r}|}$,
+%$\vec{k}=\vec{\eta}\omega/c$  is the wavenumber vector of
+%non-dispersive wavemode propagating in the direction $\vec{r}$, $t$
+%is time, and $\vec{k}\cdot(\vec{r}-\vec{s_t})$ denotes dot
+%multiplication \citep{Giurgiutiu2008}. Assume that a transmitting aperture consists of $M$
+%point sources emitting waves with angular frequency $\omega$. In such case
+%the individual wave front of $m$-th transmitter located at
+%$\vec{s}_{Tm}$ becomes
+%\begin{equation}
+%    \label{eq:individual_wfr}
+%    f(\vec{s}_{Tm},t)=\frac{A}{\sqrt{|\vec{r}_m|}}e^{j(\omega{t}-\vec{k}_{m}\vec{r}_{m})},
+%    \end{equation}
+%where $\vec{r}_m=\vec{r}-\vec{s}_{Tm}$ and
+%$\vec{k}_m=\vec{\eta}_{m}\omega/c$.
+%
+%The combined wave front transmitted by the aperture will be a
+%superposition of the effects of $M$ elements
+%\begin{eqnarray} \begin{array}{c}
+%\label{eg:combined_wavefr}
+%z_{T}(\vec{r},t)=\sum\limits_{m=0}^{M-1}{w_{m}\frac{A}{\sqrt{|\vec{r_m}|}}}e^{j(\omega{t}-\vec{k}_{m}\vec{r}_{m})}=\\=
+%f(\vec{r},t-\frac{|\vec{r}|}{c})\sum\limits_{m=0}^{M-1}w_{m}\sqrt{\frac{|\vec{r}|}{|\vec{r}_{m}|}}e^{j\omega\frac{\vec{r}-\vec{r}_m}{c}}
+%\end{array}
+%\end{eqnarray}
+%where $w_m$ are weighting coefficients applied to the aperture
+%elements.
+%
+%Note that the overall characteristics of the imaging setup is defined by
+%the point spread function (PSF), which is its response to a
+%point-like target given by the convolution of the functions
+%eq.(\ref{eg:combined_wavefr}) in transmission and reception
+%\begin{equation}
+%Z_{TR}(\vec{r},\vec{s}_{T},\vec{s}_{R},t)=z_{T}(\vec{r},t)\ast
+%z_{R}(\vec{r},t).
+%\end{equation}
+%
+%It can be shown that for far-field conditions, i.e. for
+%$|\vec{r}|>>|\vec{r}_m|$, the respective vectors become almost
+%parallel, i.e., $\vec{k}_m\approx\vec{\eta}\omega/c=\vec{k}$ and
+%$\sqrt{r_{m}}\approx\sqrt{r}$ and the eq. (\ref{eq:individual_wfr})
+%can be approximated by
+%%
+%\begin{equation}
+%    \label{eq:individual_wfr_parallel}
+%    f(\vec{r}_{m},t)\approx f(\vec{r},t-\frac{|\vec{r}|}{c})e^{j\frac{\omega}{c}\vec{\eta}\cdot \vec{s}_{Tm}}.
+%\end{equation}
+%%
+%To generate a steered beam the desired azimuth $\phi_{s}$ we have to
+%apply delays $\delta_{m}(\phi_{s})$ and apodization coefficients
+%$w_m$. The beampattern (BP) of the transmitting aperture will be
+%\citep{Giurgiutiu2008}:
+%%
+%\begin{equation}
+%\label{eq:BP}   BP(w_{m},\eta_{m},\phi_{s})=\frac{1}{M}\sum\limits_{m=0}^{M-1}w_{m}e^{j\frac{\omega}{c}[\vec{\eta}\cdot \vec{r}_{m}-\delta(\phi_s)]}.
+%\end{equation}
+%%
+%Similar relation will also apply for the receiving aperture. Note
+%that the BP defines array's characteristics in frequency  domain for
+%a given angular frequency  while DAS beamformers operate in time
+%domain.
+
+
+%
+%The principle of DAS algorithms is to compensate the phase shifts
+%that occur for pulse signals emitted by the transmitter, first  in
+%the image point $\vec{r}$ and then at the receiver point
+%$\vec{r}_R$.  This operation is applied in time domain by
+%compensating time delays equivalent to the phase shifts in the
+%broadband signals acquired by the receiving element. After
+%performing this operation the intensity of the image at the point P
+%is given by 
+%%
+%\begin{equation}
+%    \label{eq:image_at_p}
+%    I(\vec{r})=y_{TR}(\frac{|\vec{r}-\vec{r}_{T}|+|\vec{r}-\vec{r}_{R}|}{c})=y_{TR}(\tau_{T}+\tau_{R}),
+%\end{equation}
+%%
+%where $c$ is the velocity of the propagating wave mode, $\tau_T$ and
+%$\tau_R$  are propagation times from the transmitter and to the
+%receiver from the point $P$, respectively, and $y_{TR}( )$ is the
+%temporal signal received by the receiver when the transmitter is
+%firing \citep{Moreau5278443}. Consider now the 2D configuration of a linear ultrasonic
+%array consisting of $N$ transmitters and receivers shown in
+%fig.~\ref{fig:principles}b. The intensity of the image produced by
+%the classical SA setup using $N$ transmissions will be a sum of the
+%intensities obtained from the combination of each element
+%%
+%\begin{equation}
+%    \label{eq:image_contribut}  I(\vec{r})=
+%    \sum\limits_{k}^{N}\sum\limits_{l}^{N}y_{k,l}(\frac{|\vec{r}-\vec{r_T}^k|+|\vec{r}-\vec{r_R}^l|}{c})=
+%    \sum\limits_{k}^{N}\sum\limits_{l}^{N}y_{k,l}(\tau^k_{T}+\tau^l_{R}).
+%\end{equation}
+%%
+%Eq. \ref{eq:image_contribut} can be used in the situation when the
+%transmitting and receiving apertures do not have weighting
+%functions, i.e., no apodization function is used to correct the
+%aperture characteristics.
+%
+%Apodization is implemented when sparse transmitting and receiving
+%apertures have to result in a desired final PSF. Assume that the
+%weighting coefficients are used for both apertures, that is,
+%functions $w_T$ and $w_R$ represent the weight functions applied to
+%the transmit and receive aperture in order to control the relative
+%contribution of their elements. Then the intensity of the resulting
+%image will be \citep{Moreau5278443}
+%%
+%\begin{equation}
+%    \label{eq:image_apodiz}
+%     I(\vec{r})=\sum\limits_{k\in{T}}\sum\limits_{l\in{R}}w_{T}^{k}w_{R}^{l}y_{k,l}\frac{|\vec{r}-\vec{r_T}^k|+|\vec{r}-\vec{r_R}^l|}{c}.
+%\end{equation}
+%%
+%Processing the temporal signals $y_{k,l}(\cdot )$ according to
+%eq.~(\ref{eq:image_apodiz}) yields an image focused in all points
+%(pixels) of ROI. Note, however, that an interpolation is normally
+%required due to the time time-discrete character of the temporal
+%signals $y_{k,l}(\cdot )$.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Effective aperture and coarray}
+\label{sec:ef_apert_thero}
+
+In general, any combination of sparse transmitting/receiving
+apertures can be used in each measurement cycle to provide data for
+imaging algorithms that can take advantage of numerous snapshots
+acquired for a range of different emitters'/sensors' configurations.
+If the beamforming instrumentation is capable of switching between
+the transmission and reception of the elements the full matrix of
+transmit-receive data can be captured. Although, the full matrix offers the largest
+amount of information, which can be gathered from an array at a fixed position, its collection can be time-consuming and hence impractical in many applications \cite{Moreau5278443,lockwood:1998}.
+
+Sparsely populated apertures can be used as a compromise between
+image quality and acquisition time expressed in the amount of images per
+time unit by means of the SA approach. The main idea is to effectively
+use transducers grouped into transmitting and receiving sub-arrays.
+The elements of a transmitting aperture can be fired in the same
+transmission cycle to obtain a steered wave front. Alternatively,
+individual transmitters can be excited separately while multiple
+responses are acquired by the elements of the receiving aperture. The
+snapshots of the acquired backscattered signals can be then used for
+synthetic focusing during post-processing.
+If the array is divided into two parts, their individual beam patterns
+can be evaluated in the way presented in the sec.~\ref{sec:apertAndArraysTheory}.
+However, when two sub-arrays contribute to imaging, the resulting
+radiation pattern of the whole active array can be evaluated using
+the effective aperture concept.
+
+The \emph{effective aperture} of an array
+is defined as en equivalent receive aperture that would produce an
+identical two-way radiation pattern if a point source was used for
+the transmission \cite{lockwood1996}.
+
+Assuming far-field imaging the effective aperture can be calculated as a convolution of the transmission and reception apertures \cite{Moreau5278443, lockwood:1998}. Let the the aperture functions
+%$w_{T}(\vec{s}_T)$ and $w_{R}(\vec{s}_R)$
+$w_{T}(T)$ and $w_{R}(R)$
+ represent the transmission and
+reception apertures, respectively, then the effective aperture
+$w_{TR}(C_s)$ is
+%
+\begin{equation}
+    \label{eq:ef_aperture}
+    %w_{TR}(\vec{s}_C)=w_{T}(\vec{s}_T)\ast w_{R}(\vec{s}_R)
+		w_{TR}(C_s)=w_{T}(T)\ast w_{R}(R),
+\end{equation}
+%
+where $T$,  $R$ and $C_s$ are sets of vectors denoting location of elements in the transmitting, receiving and effective apertures, respectively. The coordinates of the $C_s$ and hence geometrical properties of the resulting effective aperture can be expressed as a \emph{sum coarray} (SCA), defined as the set of vector sums of formed from the location vectors of all discrete points in the apertures. In the presented coherent imaging case the SCA of a pair of apertures can be calculated as
+%
+\begin{equation}
+	C_s = \left\{\vec{s} \;| \vec{s}  = \vec{s}_{i} +\vec{s}_j, \ \ \ \ for \  \vec{s}_{i} \in T \ and \ \vec{s}_{j} \in R \right\}.
+	\label{eq:coarraydef}
+\end{equation}
+%
+%where $T$ is set of points in transmitting aperture and $R$ is the set of points in the receiving apertures.
+
+In many cases numerous independent transmission and reception cycles are used to form a single image. The total effective aperture in SA is then the sum of all effective apertures resulting from these firings
+%
+\begin{equation}
+	w^{SA}_{TR}(C_s) = \sum\limits_{n=1}^{N_f}
+	w_{T_n}(T_n)\ast w_{R_n}(R_n),
+\end{equation}
+%
+where $N_f$ is the number of independent firings, $w_{T_n}$ and $w_{R_n}$ are weighting functions used at firing $n$ for apodization of the apertures consisting of elements from the sets $T_n$ and $R_n$, respectively. Note that the collection $C_s$ in eq.~(\ref{eq:coarraydef}) is supplemented with the sum of vectors which were not already there. If the array consisting of $M$ elements is nonuniformly sampled, and there are no repeated vector sums, the maximum number of distinct elements in the coarray is $M(M+1)/2$ \cite{Hoctor1990}.
+
+Using the coarray concept the effective aperture can be considered as an equivalent receiving aperture consisting of virtual receiving elements localized at locations described by the set of vectors of the sum coarray $C_s$. The signal that would be measured by a virtual element at aperture resulting from a transmission from a single element at the origin of the aperture plane is called the \textit{coarray observation function} \cite{Hoctor1990}.
+
+The signals corresponding to these elements contribute to imaging with defined weights. In the case of \emph{nonredundant} coarray, that was formed by distinct vectors sums, the weight of $m$th coarray element can be calculated simply as a product of weights of the transmitter and receiver that were used to create the $m$th element
+%
+\begin{equation}
+	w_{TR}(\vec{s}_m)=w_T(\vec{s}_i)\cdot w_R(\vec{s}_j),
+\end{equation}
+%
+where $\vec{s}_m=\vec{s}_i+\vec{s}_j$. Therefore, the resulting value is one if a uniform weighting was assumed for the transmitting and receiving apertures.
+
+In general case, however, more than one transmitter/receiver pair can lead to the same \textit{m}th coarray element. In this case the coarray is \emph{redundant} which can be interpreted as $N_r$ repetitions of the acquisition cycles performed by \textit{m}th virtual element, where $N_r$ is the number of transmitter/receiver pairs with the same location vectors sums, or in other words, the same coarray observation function is used several times for imaging. Then the weight of \textit{m}th coarray element can be found as
+%
+\begin{equation}
+	w_{TR}(\vec{s}_m)=\sum\limits_{n=1}^{N_r}w_{Tn}(\vec{s}_{in})\cdot w_{Rn}(\vec{s}_{jn}),
+	\label{eq:CoAweight}
+\end{equation}
+%
+for all $\vec{s}_{in}$ and $\vec{s}_{jn}$ satisfying $\vec{s}_m=\vec{s}_{in}+\vec{s}_{jn}$. Consequently, in this case the weight of the \textit{m}th element is $w_{TR}(\vec{s}_m)=N_r$ (if a uniform weighting of the retransmit/receive apertures was assumed).
+%
+\subsubsection{Coarray reweighting}
+\label{sec:COAreweight}
+%
+The performance of an array can be evaluated as the array pattern of the effective aperture, and consequently, its beam pattern can be found using eq.~(\ref{eq:BP_general_eq}). Two main aspects of the 2D aperture function determine the characteristics of an array. The geometry of the effective aperture, described by the sum coarray, and the weights that correspond to the subsequent elements, described by the coarray weighting function.
+
+ %As it was stated before, the aperture function has the same role as apodization in classical 1D signal processing in the presented case, however, 2D  rather than 1D windows are considered here.
+
+Based on eq.~(\ref{eq:CoAweight}) it can be deduced that even using uniform weights for transmitting/receiving apertures can lead, in the case of redundant coarrays, to complex-shaped windows, possibly with sharp edges. These windows, like in classical signal processing problems, can result in high side-lobes levels, that can produce spurious image artifacts. Consequently, by changing the shape of the  coarray weighting function it is possible to alter the side-lobes level and hence to influence the quality of the imaging algorithm. An arbitrary shape of the coarray weighting function can be obtained if apodization is applied for transmitting and receiving apertures.
+
+Multiple physical apertures can have the same coarray. These arrays are called \emph{coarray equivalent} and all of them have the same characteristics and the same imaging abilities.
+
+In imaging applications involving synthetic focusing, the transmitters are excited subsequently and the received snapshots are subject to post-acquisition processing. Since apodization applied to the transmitting elements involves reduction of the emitted signal's amplitude, which in consequence reduces signal to noise ratio of the acquired data, here, we will assume that the weights will be applied only for the received signals in the post-acquisition step.
+
+Redundancy in the coarray means that the number of transmission/reception cycles could be reduced, i.e., signals from some transmitter/receiver pairs could be omitted without the loss of resolution. On the other hand, however, averaging of multiple coarray observations improves signal to noise ratio. Therefore, if \textit{m}th coarray element corresponds to $N_r$ transmitter/receiver pairs, and when the weights of the transmitters are $w(\vec{s}_{in})=1$, then the weights of the corresponding sensors are $w(\vec{s}_{jn})= w(\vec{s}_{m})/N_r$, where $w(\vec{s}_{m})$ is the desired weight of the \textit{m}th coarray element, for all $\vec{s}_{in}$ and $\vec{s}_{jn}$ satisfying $\vec{s}_m=\vec{s}_{in}+\vec{s}_{jn}$.
+
+
+\subsection{Time-frequency representation}
+
+
+
+\section{Examples of coarray synthesis}
+\label{sec:theoreticCoarr}
+
+In this section principle of the coarray synthesis will be illustrated using three examples. The influence of the redundancy of the obtained array and the respective beam patterns will be presented, moreover, the role of the coarray's reweighting in the synthesis process will be discussed.
+
+All of the topologies studied below have been created using the inter-element spacing of $d=5mm$. In the presented examples the arrays will be steered to an angle of $90^\circ$, and the wavenumber has been adjusted to fulfill the condition $d=\lambda_0/2$.
+
+\subsubsection{Uniform linear array}
+\label{sec:ULA_Coarr}
+\begin{figure}[!h]
+	\centering
+		\subfigure[]{\includegraphics[width=0.95\textwidth]{Figures/co_array_lin_apert.pdf}}
+		\subfigure[]{\includegraphics[width=0.49\textwidth]{Figures/lin_array_res_coarray.pdf}}
+		\subfigure[]{\includegraphics[width=0.49\textwidth]{Figures/co_array_lin_skrajne_effective.pdf}}
+	\caption{Linear array with indicated elements excited in the subsequent firings and the corresponding coarrays (a). Coarrays obtained as a  result of $N_f=6$ firings (I + II+...+VI)  (b) and only $N_f=2$ firings (I+VI) (c). }
+	\label{fig:co_array_lin_array}
+\end{figure}
+
+%\subsection{Uniform linear array}
+
+To illustrate the coarray synthesis assume first a linear array consisting of 6 elements, presented in fig.~\ref{fig:co_array_lin_array}a. Since the array is used to collect full matrix of data VI independent excitations were performed. The active elements used in the subsequent firings are indicated and the corresponding coarrays are presented in fig.~\ref{fig:co_array_lin_array}a. When there is only one transmitting element, then according to eq.~(\ref{eq:coarraydef}), the resulting aperture is the receiving aperture, shifted with the coordinates of the transmitter. Note that in some locations virtual elements occur repentantly in multiple excitation cycles. The number of repeated coarray elements is plotted versus their location in fig.~\ref{fig:co_array_lin_array}b. From the figure it can be seen that there exists redundancy in the collected data, for instance, the virtual element at $x=0$ occurred 6 times. This plot can also be interpreted as the effective aperture of the considered array. From fig.~\ref{fig:co_array_lin_array}b it can be seen that the effective aperture has much greater spatial extend compared to the physical array. Moreover, it can be seen that the resulting apodization has a triangle window shape.
+
+
+
+%
+The redundancy in the collected data can improve signal to noise ratio, however, it will not enhance angular resolution of the imaging system that is related to the array's spatial extent. From fig.~\ref{fig:co_array_lin_array}a it can be seen that the outermost coarray elements emerge when the extreme elements from the physical array are excited. The coarray resulting as a sum of $N_f = 2$ firings, using external emitters, is presented in fig.~\ref{fig:co_array_lin_array}c. The aperture obtained from two firings is the same as that presented in fig.~\ref{fig:co_array_lin_array}b. Moreover, it can be observed that only one element at $x=0$ is redundant.
+%
+
+As it was explained in sec. \ref{sec:COAreweight}, by changing the weights of the receivers it is possible to obtain a desired shape of weighting function. An example of re-weighting procedure with the aim to obtain a triangle-shaped weighting function is presented in fig. \ref{fig:ULA_correction}. Height of the bars, presented in the figure is proportional to the weights of the corresponding elements. In the considered case the weights of the sensors leading to redundancy were adjusted by a factor of 2 to avoid peaks in the final coarray.
+
+\begin{figure}[t!]
+	\centering
+		\includegraphics[width=1\textwidth]{Figures/lina_arr_skrajne_2trojkatv2.pdf}
+		%\subfigure[]{\includegraphics[width=0.45\textwidth]{Figures/}}
+	\caption{Example of the sparse array re-weighting to obtain a coarray apodized with triangle weighting function. }
+	\label{fig:ULA_correction}
+\end{figure}
+
+
+\begin{figure}[h]
+	\centering
+\includegraphics[width=0.6\textwidth]{Figures/ULAnt_16_BPs.eps}
+	\caption{Beam patterns of the triangle-shaped and uncorrected coarray obtained according to the scheme presented in fig.~ \ref{fig:co_array_lin_array}.}
+	\label{fig:BP_ULA}
+\end{figure}
+
+To illustrate performance of the apertures obtained using the coarray approach, beam patterns of the coarrays of a triangle-shaped weighting function and a uniform coarray are presented in fig.~\ref{fig:BP_ULA}. These coarrays were obtained in the way presented in figs.~\ref{fig:co_array_lin_array}b and c respectively, however, the physical linear array consisted in this case of 16 elements, which lead to 31 coarray elements. From the figure it can be seen that the BP of the uniform coarray (obtained by firing two side elements) has the side-lobe level of -15dB, while for the triangle-window apodized coarray (obtained by firing all elements) this level is -27dB. However, the later BP exhibits wider main lobe than the previous one. Note that since the final coarrays presented in fig.~\ref{fig:co_array_lin_array}b and \ref{fig:ULA_correction} have the same shape, they have also the same BPs that can only differ by a constant gain and their plots will be identical after normalization.
+
+
+
+The re-weighting procedure presented here can be changed to lead to different shapes of the weighting function, for instance Hamming window, as discussed in details in \cite{Moreau5278443}.
+
+
+\subsubsection{Cross-like sparse array}
+%
+\begin{figure}[!h]
+	\centering
+		\includegraphics[width=0.60\textwidth]{Figures/co_array_square2.pdf}
+	\caption{Example of coarray synthesis. The elements of horizontal sub-array are used as emitters, the vertical sub-array is used as receivers which results in a square coarray.}
+	\label{fig:co_array_square}
+\end{figure}
+%
+\begin{figure}[!h]
+	\centering
+		\subfigure[]{\includegraphics[width=0.45\textwidth]{Figures/square_steered_rect_90.png}}
+		\subfigure[]{\includegraphics[width=0.45\textwidth]{Figures/square_steered_hann_90.png}}
+		\subfigure[]{\includegraphics[width=0.45\textwidth]{Figures/cros2kwadr_n10_hann_weight22.eps}}
+		\subfigure[]{\includegraphics[width=0.45\textwidth]{Figures/BPs_num_comp_kwadrat_coa.eps}}
+	\caption{Array patterns of the square coarray resulting from the sparse cross array. Uniform (rectangular window) weighting (a) and Hamming window weighting (b) (color scales used correspond to 60dB amplitude range). Coarray modulated by 2D Hamming window (c) and  beam patterns obtained at points corresponding to white cycles presented in the array patterns (d).}
+	\label{fig:ArrPtrnSquare}
+\end{figure}
+%
+As an example of a sparse non-redundant coarray let us consider a cross-like array, presented schematically in fig.~\ref{fig:co_array_square}. The elements of the horizontal sub-array are used as transmitters, whereas the vertical sub-array contains receivers. When the \textit{i}th element, at $\vec{s}_i$, emits a signal and the \textit{j}th element, at $\vec{s}_j$, is used to sense the scattered wave is equivalent to a virtual sensor localized at $\vec{s}_{ij}$. In the considered case all coarray's elements are distinct, i.e., $M$ emitters and $M$ sensors result in $M\times M$ virtual sensors. If unity weighting functions are used for the transmission and reception the weights of the elements of the resulting effective aperture will also be equal to one.
+
+Let us consider an array consisting of 10 emitters and 10 sensors with topology illustrated by fig.~\ref{fig:co_array_square}. In figs.~\ref{fig:ArrPtrnSquare}a and b steered array patterns of the array obtained according to the diagram were presented.
+Uniform coarray elements weighting was assumed in fig. \ref{fig:ArrPtrnSquare}a, whereas 2D Hamming window apodization, shown in fig. \ref{fig:ArrPtrnSquare}c, was used to to obtain the array pattern presented in fig. \ref{fig:ArrPtrnSquare}b. From the figures it can be seen that both steered array patterns intersect the visible limit circle twice, therefore, in BPs, presented in fig.~\ref{fig:ArrPtrnSquare}d additional back lobes at angle of $270^\circ$ occur. Moreover, comparing figs.~\ref{fig:ArrPtrnSquare}a and b it can be seen that using Hamming apodization significantly lower the side-lobes level increasing the size of the main lobe. The windowing effect can be observed even more clearly in the BPs plot (fig.~\ref{fig:ArrPtrnSquare}~d).
+
+
+
+
+\subsubsection{Star-like array}
+%
+
+
+
+
+
+\begin{figure}[h]
+	\centering
+		\subfigure[]{\includegraphics[width=0.45\textwidth]{Figures/star_emission_aroundstar_topol2.eps}}
+		\subfigure[]{\includegraphics[width=0.45\textwidth]{Figures/star_emission_aroundstar_topol_coarray.eps}}
+	\caption{Star-like array with outer elements used as emitters (a) resulting sum coarray (b).}
+	\label{fig:star_topol}
+\end{figure}
+
+A sparse star-like array, consisting of 4 linear arrays, presented in fig. \ref{fig:star_topol}a, was the next considered topology. As it was shown in sec. \ref{sec:ULA_Coarr} using the outermost elements of the array allows to obtain the biggest spatial extent of coarray. Therefore, only these elements were used as transmitters, whereas the remaining elements were used as sensors. No transmit/receive (pulse-echo) elements were used in the same measurement cycles.
+
+The SCA of the star-shaped sparse aperture, presented in fig.~\ref{fig:star_topol}b has rather complicated shape and, as expected, it has a bigger size compared to the physical array. In fig. \ref{fig:star_weights}a weighting function, which was obtained assuming uniform weighting of transmit and receive apertures was presented. The plot exhibits also the redundancy of the corresponding virtual channels. For instance, the weight of the central coarray element is 8, which means that 8 sums of vectors of transmitter/receiver pairs is equal to (0,0). Furthermore, there exists a few more elements with the redundancy of 2.
+%
+%
+%
+\begin{figure}[!h]
+	\centering
+	\subfigure[]{\includegraphics[width=0.45\textwidth]{Figures/star_emission_aroundstar_emission_around_weight1v2.eps}}
+		\subfigure[]{\includegraphics[width=0.45\textwidth]{Figures/star_emission_aroundstar_emission_around_weight2v2.eps}}
+		
+	\caption{Weighting functions of coarray presented in fig.~\ref{fig:star_topol}b. Uncorrected, resulting from data redundancy (a), corrected with Hamming window (b).}
+	\label{fig:star_weights}
+\end{figure}
+
+In figs.~\ref{fig:star_arr_ptrn}a, b and c steered responses of the considered coarray with different weighting functions were presented. In the first case, fig.~\ref{fig:star_arr_ptrn}a, apodization resulting form the data redundancy, (as shown in fig. \ref{fig:star_weights}a) was used. Next, uniform, rectangular-window was applied to the coarray to obtain fig.~\ref{fig:star_arr_ptrn}b. Finally, the coaray was re-weighted to obtain 2D Hamming-window, presented in fig.~\ref{fig:star_weights}b and the resulting steered array pattern can be seen in fig.~\ref{fig:star_arr_ptrn}c.
+
+\begin{figure}[!h]
+	\centering
+		\subfigure[]{\includegraphics[width=0.49\textwidth]{Figures/star_emission_around_steered_redund_90.png}}
+		\subfigure[]{\includegraphics[width=0.49\textwidth]{Figures/star_emission_around_steered_rect_90.png}}
+			\subfigure[]{\includegraphics[width=0.49\textwidth]{Figures/star_emission_around_steered_hamm_90.png}}
+			\subfigure[]{\includegraphics[width=0.49\textwidth]{Figures/star_emission_aroundstar_emission_around_BP_90v2.eps}}
+			\caption{Steered responses of the star-like coarray with   weighting: resulting from data redundancy, as presented in fig.~\ref{fig:star_weights}a (a), rectangular window (b), Hanning window as shown in fig.~\ref{fig:star_weights}b (c). Beam patterns obtained at points corresponding to white cycles presented in the figures (d).}
+	\label{fig:star_arr_ptrn}
+\end{figure}
+
+All of these steered responses exhibit multiple side-lobes. Moreover, multiple axes of symmetry can be seen in these characteristics, therefore, it is expected that it is sufficient to investigate the array's performance only for a small number of angles and the reaming direction will repeat these results.
+
+To look closer at the side-lobes levels BPs obtained with different weighting functions were added in fig.~\ref{fig:star_arr_ptrn}d. Making a comparison of these characteristics it can be observed that no corrected weighting function results in highest side-lobes level. Using the rectangular, weighting function allows for slight reduction of side-lobes without any noticeable change of the main-lobe width. As it could be expected using Hamming window allows for side-lobes reduction, however, the width of the main-lobe is also increased.
+
+
+
+\section{Numerical results}
+\label{sec:numsimCoarr}
+
+In the section \ref{sec:theoreticCoarr} the performance of the arrays was analyzed using steered responses and beam patterns. These tools provide a large number of information on the characteristics based on the geometrical features of the aperture. 
+
+In this section the imaging ability of the 2D apertures described in section \ref{sec:theoreticCoarr} will be discussed using simulated data. The simplified simulation technique, based on structure's transfer function will be used here.  
+
+
+
+\subsubsection{Sparse cross array}
+
+\begin{figure}[!h]
+	\centering
+		\subfigure[]{\includegraphics[width=0.49\textwidth]{Figures/cross2square_PSF_STF_rectwin_90.png}}
+		\subfigure[]{\includegraphics[width=0.49\textwidth]{Figures/cross2square_PSF_STF_hann_90.png}}
+		\subfigure[]{\includegraphics[width=0.49\textwidth]{Figures/cross2square_beam_ptrn_rect_hann_90.eps}}
+		\subfigure[]{\includegraphics[width=0.49\textwidth]{Figures/cross2square_beam_ptrn_STF_hann_90.eps}}
+	\caption{Imaging results of a far-field reflector, obtained using square coarray with uniform weighting (a) and apodization by 2D Hamming window (b). The beam patterns resulting form the theoretical array pattern (BP) and the structure's transfer function model (STF) for uniform (c) and the 2D Hamming window apodization.}
+	\label{fig:sqNumPSF}
+\end{figure}
+
+
+
+
+The STF method was used to create 100 signals that would be obtained using 10 sensors in the cross array with topology shown in fig.~\ref{fig:rec_cross_topol}, due to 10 emissions. These signals were processed using DAS beamformer and the resulting image can be seen in fig. \ref{fig:sqNumPSF}a. A clear echo related to the scatterer can be observed, however, some additional spurious artifacts can also be seen that form a back echo at $270^\circ$.
+
+In the next step, to obtain directional characteristics, the image was processed to collect the highest amplitudes that occurred at the subsequent azimuth angles. The directional characteristic resulting from the STF simulation can be compared to the BP obtained using the classical approach in fig.~\ref{fig:sqNumPSF}c. The theoretical BP was obtained from eq. (\ref{eq:BP_general_eq}) using coordinates of the square coarray. Comparison of both characteristics shows excellent agreement of the main and side-lobes for the angles in the range of $0^\circ-90^\circ$. For the remaining azimuths the STF result is much lower than that in the theoretical BP. This can be explained by the fact that the theoretical approach assumes continuous wave signal and, therefore, it produces a back-lobe identical to the main lobe. The STF approach, however, was created for tone-burst excitation, which allows to distinguish between the waves impinging from $90^\circ$ and $270^\circ$.
+
+\begin{figure}[htbp]
+	\centering
+		\includegraphics[width=0.6\textwidth]{Figures/cross_BP_compar_rect_hamm.eps}
+	\caption{Comparison of the directional characteristics obtained from the STF model for uniform and Hamming apodization. }
+	\label{fig:cross_BP_compar_rect_hamm}
+\end{figure}
+
+The data used to create the image presented in fig. \ref{fig:sqNumPSF}a were re-weighted to implement the 2D Hamming window apodization. Ten the signals were processed using DAS beamformer and the result presented in fig.~\ref{fig:sqNumPSF}b was obtained. Comparing both images it can be seen that the reflector related region is broader in the case of Hamming window than when the uniform weighting was used. Moreover, due to the reduction of signals weights the maximal value observed in fig. \ref{fig:sqNumPSF}b is considerably lower than that in \ref{fig:sqNumPSF}a. Similarly to the previous example, the reflector image was processed to produce the directional characteristic and the result can be compared  with the theoretical BP in fig.~\ref{fig:sqNumPSF}d. As previously, the main-lobes obtained using both techniques are in a good agreement in vicinity of $90^\circ$, but the back-lobe present at the angle of $270^\circ$ obtained using STF is lower than that predicted using the theoretical approach.
+
+\subsubsection{Star-like array}
+
+
+
+The directional characteristics evaluated using STF, presented in fig.~\ref{fig:sqNumPSF}c~and~d can be compared in detail in fig. \ref{fig:cross_BP_compar_rect_hamm}. As expected, the Hamming window allows to reduce the side lobe level at the price of the main lobe width. However, the back-lobe, present at the angle of $270^\circ$ has higher amplitude for Hamming than rectangular window. This can be surprising since, intuitively, applying soft window apodization should increase intensity of the spurious image artefact. Note, however, that the back-lobe level reduction is related to the frequency content of the excitation signal; in the BP presented in fig. \ref{fig:ArrPtrnSquare}d, for which a monochromatic signal was assumed no back-lobe reduction was achieved.
+
+
+
+
+\begin{figure}[h!]
+	\centering
+	\subfigure[]{\includegraphics[width=0.48\textwidth]{Figures/star_emission_around_PSF_STF_redund_90.png}}
+	\subfigure[]{\includegraphics[width=0.51\textwidth]{Figures/star_BP_and_STF.eps}}
+	%\includegraphics[width=0.60\textwidth]{Figures/star_BP_and_STF.eps}
+	\caption{Damage image of a far-field reflector obtained using the star-like coarray with weighting resulting from data redundancy, as presented in fig.~\ref{fig:star_weights}a (a). Beam patterns of the star-shaped coarray resulting form array pattern and as post processing of structure's transfer function image. (b)}
+	\label{fig:star_BP_and_STF}
+\end{figure}
+
+\begin{figure}[h!]
+	\centering
+		%\subfigure[]{\includegraphics[width=0.45\textwidth]{Figures/star_emission_around_PSF_STF_redund_90.png}}
+		\subfigure[]{\includegraphics[width=0.49\textwidth]{Figures/star_emission_around_PSF_STF_rectwin_90.png}}
+		\subfigure[]{\includegraphics[width=0.49\textwidth]{Figures/star_emission_around_PSF_STF_hann_90.png}}
+		\subfigure[]{\includegraphics[width=0.6\textwidth]{Figures/star_emission_aroundstar_coA_beam_ptrn_STF_9090.eps}}
+	\caption{Damage images of a far-field reflector obtained using the star-like coarray with uniform, rectangular window (a), Hanning window as shown in fig.~\ref{fig:star_weights}b (b). Directional characteristics obtained as angle-wise amplitudes of the images (c).}
+	\label{fig:sim_psf_starr_arr}
+\end{figure}
+
+
+
+
+The next simulation assumed a star-shaped array operating in the setup illustrated in fig. \ref{fig:star_topol}a. The first image, presented in fig.~\ref{fig:star_BP_and_STF}a was obtained using uncorrected weighting, resulting from the data redundancy, i.e. with weighting function presented in fig.~\ref{fig:star_weights}a. The image was analyzed to find maximal amplitudes that occurred for the subsequent angles. The result can be compared to the BP obtained for the resulting coarray using the classical approach in fig. \ref{fig:star_BP_and_STF}b. An excellent accordance of the main lobes can be seen in the plot. However, the side-lobes are lower in the characteristics obtained from the STF image, thanks to frequency-wavenumber information carried by the tone-burst signals.
+
+In the next step, re-weighting was applied to obtain uniform, rectangular window and 2D Hamming window of the shape shown in fig.~\ref{fig:star_weights}a. The resulting images were presented in figs.~\ref{fig:sim_psf_starr_arr}a~and~b respectively. Comparing these images, to the one, presented in fig.~\ref{fig:star_BP_and_STF}a, it can be seen that the highest insensitivity of the damage-related region exhibits the uncorrected image. In other cases the apodization is connected with reduction of signals' weights, therefore, the resulting maximal intensity of the image is also reduced.
+
+In the next step, the images were analyzed to find maxims that occurred at subsequent angles. The results were normalized, which yielded directionality characteristics presented in fig.~\ref{fig:sim_psf_starr_arr}d. From these plots it can be seen that the no-corrected aperture leads to highest side-lobes among the investigated weighting functions. Moreover, it can be seen that application of Hamming window wides the main-lobe width and allows to obtain the lowest side-lobes level among considered cases. The differences, however are not to significant.
+
+
+
+\section{Experimental results} \label{sec:experiments}
+%
+
+In this section the imaging approaches, described above in this chapter, will be evaluated experimentally. The experiments were conducted on an aluminum plate  of the size
+1000x1000x2 mm, presented in fig. \ref{fig:Exp_setup_vib}a.  As emitters PZT elements of the size of $2\times2\times2 mm$, type CMAP~12 from Noliac Denmark, were used. The number of transmitting elements and their distribution over the apertures varied with the investigated imaging approaches, and it will be discussed in detail in the consecutive subsections. The responses
+of the structure were captured using a
+laser scanning Doppler vibrometer (LSDV). A great advantage of the contact-less measurement technique is that it
+facilitates modification of the measurement points grid which
+enables  investigation of various topologies of the sensing
+sub-array. This setup has, however, a serious limitation -- effects
+of the inter-element scattering that may be encountered for a full
+2D array of PZT elements cannot be taken into account.
+
+Tone-burst signals were used as an excitation. PAS-8000 from EC Electronics, Poland, used as a signal generator, enabled both single-element excitation and simultaneous generation of the time-shifted signals in PA mode.
+
+
+%
+%\subsection{Experimental setup }
+%
+\begin{figure}[!h]
+    \centering
+        \subfigure[]{\includegraphics[width=0.45\textwidth]{figures/Experimental_setup_vibr.eps}}
+\subfigure[]{\includegraphics[width=0.42\textwidth]{figures/wibrometer_setup.eps}}
+%\subfigure[]{\includegraphics[width=0.29\textwidth]{figures/star_array_vib.eps}}
+\caption{Experimental setup to investigate imaging techniques (a) An
+example of laser vibrometer measurement points in: spiral-shaped
+configuration used in STMR setup~(b)}
+    \label{fig:Exp_setup_vib}
+\end{figure}
+%
+
+
+\subsection{Using coarray}
+
+The experiments presented below were performed to verify the simulations described in section \ref{sec:numsimCoarr}. A small mass at a distance of $300 mm$ and angle of $90^\circ$ respectively to the array was used as scatterer. In these experiments tone burst-excitation signals consisting of 3 cycles of sine, at $150kHz$, modulated with Hanning window were used. The investigated topologies were created assuming inter-element distance of $d=\lambda_{A_0}/2=5 mm$. Moreover, in the considered examples dispersion compensation was used.
+
+\subsubsection{Simulations of the sparse cross-array}
+
+\begin{figure}[!h]
+	\centering
+		\subfigure[]{\includegraphics[width=0.49\textwidth]{Figures/wynik_SF_rect_nodisper_PSF.png}}
+		\subfigure[]{\includegraphics[width=0.49\textwidth]{Figures/wynik_STMR_rect_disp_rem_PSF.png}}
+		\subfigure[]{\includegraphics[width=0.49\textwidth]{Figures/wynik_SF_hann_nodisper_PSF.png}}
+		\subfigure[]{\includegraphics[width=0.49\textwidth]{Figures/wynik_SF_BP_compar2.eps}}
+	\caption{Images of the far-field scatterer obtained using cross-shaped sparse array (a) and the multiple receivers square array consisting of 100 elements and a single-transmitter (STMR) (b). The cross-shaped sparse array apodized using Hamming window (c) and directional characteristics of three imaging methods: the cross shaped array with recatngular (Rect win) and Hamming apodization (Ham.) and  the single transducer multiple receivers (STMR) (d).   }
+	\label{fig:experSquare}
+\end{figure}
+
+In the first part of the experiment, performed to test the coarray concept, a cross-shaped array shown in \ref{fig:co_array_square}a was created. The horizontal arm consisted of 10 PZT transmitters, whereas the vertical arm consisted of 10 points implemented in the vibrometer grid. The emitters were fired subsequently and the corresponding set of signals was acquired for each emission. The full matrix data, consisting of $10\times10=100$ signals, was processed and the resulting reflector image can be seen in fig.~\ref{fig:experSquare}a.
+
+In the second part of the experiment, the emitter was placed at the central point of the array at coordinates (0,0), and the field was sensed at 100 sensing points with the coordinates defined by the sum coarray of the sparse cross aperture. The result of imaging using the  single transmitter and multiple receivers (STMR) setup is presented in fig. \ref{fig:experSquare}b where an excellent agreement of both images can be observed. Negligible discrepancies can be explained by the errors in the determination of PZTs emitters' positions in the first part.
+
+Finally, post-processing of the captured sparse-array data was performed -- the data was re-weighted applying 2D Hamming window apodization. In the resulting image, presented in fig.~\ref{fig:experSquare}c, the area related to the reflector is much wider than in fig.~\ref{fig:experSquare}a, but also the side-image artifacts are less distinct in fig.~\ref{fig:experSquare}c than those in fig.~\ref{fig:experSquare}a. This is the expected effect of the Hamming apodization.
+
+Performance of the considered imaging setups can be compared in details using the directional characteristics presented in fig.~\ref{fig:experSquare}d. The expected agreement between the sparse and STMR imaging algorithms is confirmed. Moreover, the widening of the main, $90^\circ$, lobe and lowering of the side-lobes due to the Hamming apodization can be seen. However, the rise of the back-lobe, existing at $270^\circ$, in the case of the apodized coarray can also be observed. This effect confirms the simulation results, presented in fig.~\ref{fig:cross_BP_compar_rect_hamm}.
+
+
+
+
+\subsubsection{Simulations of the star-like array}
+
+\begin{figure}[!hb]
+	\centering
+		\subfigure[]{\includegraphics[width=0.45\textwidth]{Figures/wynik_SF_hann_PSF_uncorr.png}}
+		\subfigure[]{\includegraphics[width=0.45\textwidth]{Figures/wynik_SF_hann_PSF_rect.png}}
+		\subfigure[]{\includegraphics[width=0.45\textwidth]{Figures/wynik_SF_hann_PSF_Hann.png}}
+		\subfigure[]{\includegraphics[width=0.45\textwidth]{Figures/star_emission_aroundstar_BP_exper.eps}}
+	\caption{Damage images of a far-field reflector obtained using the star-like coarray with weighting resulting from data redundancy, as presented in fig.~\ref{fig:star_weights}a (a), rectangular window (b), Hanning window as shown in fig.~\ref{fig:star_weights}b (c). Beam patterns obtained at points corresponding to white cycles presented in the figures (d).}
+	\label{fig:exper_damag_imag}
+\end{figure}
+%
+The consecutive experiment follows up the star-shaped setup presented in fig.~\ref{fig:star_topol}a. The star-shaped grid of laser sensing points was used. Since using the vibrometer it was was not possible to measure the structure's response at the point in which the PZT transducer was placed, for the emissions a single transmitter was moved to the locations of the subsequent, outermost elements.
+
+Similarly to the simulations, 3 apodization cases were assumed, i.e. no corrected, redundancy weighting, uniform rectangular and Hamming window lead to the images that can be seen in figs.~\ref{fig:exper_damag_imag}a,~b~and~c respectively. Differences of maximal  insensitivity values that occurred in the images due to re-weighting can be observed from the comparison of these images. Any other differences can be hardly seen, which is also evident from the directional characteristics presented in fig.~\ref{fig:exper_damag_imag}c.
+
+
+
+
+%% References
+%%
+%% Following citation commands can be used in the body text:
+%% Usage of \cite is as follows:
+%% \cite{key}       ==>> [#]
+%%  \cite[chap. 2]{key} ==>> [#, chap. 2]
+%%  \citet{key}      ==>> Author [#]
+
+
+
+%% References with bibTeX database:
+
+%\bibliographystyle{model1a-num-names}
+\bibliographystyle{IEEEtran}
+\bibliography{C:/Users/Lukasz/Dropbox/bibliografia_bitex/LA_bib}
+%\bibliography{C:/Users/Lukasz/drpBOX/Dropbox/bibliografia_bitex/LA_bib}
+
+%% Authors are advised to submit their bibtex database files. They are
+%% requested to list a bibtex style file in the manuscript if they do
+%% not want to use model1a-num-names.bst.
+
+%% References without bibTeX database:
+
+% \begin{thebibliography}{00}
+
+%% \bibitem must have the following form:
+%%  \bibitem{key}...
+%%
+
+% \bibitem{}
+
+% \end{thebibliography}
+
+
+\end{document}
+
+%%
+%% End of file `elsarticle-template-1a-num.tex'.
